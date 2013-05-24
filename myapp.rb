@@ -13,6 +13,5 @@ get '/win', probability: 0.5 do
 end
 
 get '/win' do
-  code = "<%= Time.now %>"
-  erb code
+  erb :win
 end
