@@ -4,6 +4,7 @@ require 'rubygems'
 require 'builder'
 require 'active_record'
 require 'slim'
+require 'debugger'
 #env = ENV["RACK_ENV"]
 
 ActiveRecord::Base.establish_connection(
@@ -13,8 +14,13 @@ ActiveRecord::Base.establish_connection(
   username: 'root',
   password: 'password'
 )
+# create database lazer;  use lazer; create table posts ( id mediumint not null auto_increment, name char(50),primary key (id) );
+
 
 class Article < ActiveRecord::Base
+end
+
+class Post < ActiveRecord::Base
 end
 
 get '/' do
@@ -23,6 +29,7 @@ get '/' do
     database: 'sin.sqlite'
   )
   @articles = Article.all
+  @posts = Post.all
   slim :index
 end
 

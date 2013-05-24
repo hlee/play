@@ -1,6 +1,14 @@
+H2 Article
 ul
   - @articles.each do |article|
     li
       = article.name
     li
       = article.content
+H2 Post
+ul
+  - @posts.each do |post|
+    li
+      = post.id
+    li
+      = post.name
