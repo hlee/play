@@ -3,6 +3,7 @@ require 'sinatra'
 require 'rubygems'
 require 'builder'
 require 'active_record'
+require 'slim'
 #env = ENV["RACK_ENV"]
 
 ActiveRecord::Base.establish_connection(
@@ -21,7 +22,8 @@ get '/' do
     adapter: 'sqlite3',
     database: 'sin.sqlite'
   )
-  Article.first.name
+  @articles = Article.all
+  slim :index
 end
 
 set(:probability) { |value| condition { rand <= value } }
