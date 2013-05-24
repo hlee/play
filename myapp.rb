@@ -4,7 +4,7 @@ require 'rubygems'
 require 'builder'
 require 'active_record'
 require 'slim'
-require 'debugger'
+#require 'ruby-debug/debugger'
 #env = ENV["RACK_ENV"]
 
 ActiveRecord::Base.establish_connection(
