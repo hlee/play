@@ -1,5 +1,6 @@
 #myapp.rb
 require 'sinatra'
+require 'builder'
 
 get '/' do
   'Hello world!'
@@ -14,4 +15,9 @@ end
 
 get '/win' do
   erb :win
+end
+
+#get '/feed', provides: ['rss', 'xml'] do
+get '/feed.rss' do
+  builder { |xml| xml.em 'hi' }
 end
