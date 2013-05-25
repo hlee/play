@@ -63,6 +63,7 @@ class MyApp < Sinatra::Base
     )
     @articles = Article.all
     @posts = Post.all
+    @students = Student.all
     slim :index
   end
 

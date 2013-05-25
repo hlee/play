@@ -5,6 +5,7 @@ ul
       = article.name
     li
       = article.content
+
 H2 Post
 ul
   - @posts.each do |post|
@@ -12,3 +13,14 @@ ul
       = post.id
     li
       = post.name
+
+H2 Student & Lesson
+ul 
+  - @students.each do |student|
+    li
+      = student.name
+      = student.age
+      ul
+        - student.lessons.each do |lesson|
+          li
+            = lesson.name
