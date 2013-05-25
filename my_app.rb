@@ -5,6 +5,8 @@ require 'builder'
 require 'data_mapper'
 require 'active_record'
 require 'slim'
+require 'pry'
+require 'ap'
 #require 'ruby-debug/debugger'
 #env = ENV["RACK_ENV"]
 
@@ -40,7 +42,7 @@ end
 
 DataMapper.auto_upgrade!
 
-
+#binding.pry
 ActiveRecord::Base.establish_connection(
   adapter: 'mysql2',
   host: 'localhost',
