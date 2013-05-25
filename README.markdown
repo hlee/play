@@ -34,3 +34,7 @@ end
 ```ruby
   pry -r my_app.rb
 ```
+
+## notes
+
+So far, debugger works perfect with sinatra. step debug
