@@ -19,7 +19,8 @@ gem 'dm-mysql-adapter'
 group :development, :test do
   gem 'awesome_print'
   gem 'racksh'
-#gem 'ruby-debug'
+  gem 'debugger'
   gem 'pry'
-  gem 'pry_debug'
+  gem 'pry-nav'
+  gem 'pry-debugger'
 end

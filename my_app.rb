@@ -7,7 +7,6 @@ require 'active_record'
 require 'slim'
 require 'pry'
 require 'ap'
-#require 'ruby-debug/debugger'
 #env = ENV["RACK_ENV"]
 
 DataMapper.setup(:default, 'mysql://root:password@localhost/lazer')
@@ -42,7 +41,6 @@ end
 
 DataMapper.auto_upgrade!
 
-#binding.pry
 ActiveRecord::Base.establish_connection(
   adapter: 'mysql2',
   host: 'localhost',
@@ -59,6 +57,8 @@ end
 
 class MyApp < Sinatra::Base
   get '/' do
+    #debugger
+    #binding.pry
     Article.establish_connection(
       adapter: 'sqlite3',
       database: 'sin.sqlite'
