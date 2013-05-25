@@ -7,6 +7,7 @@ display how to use sinatra related
 3. builder
 4. rspec
 5. DataMapper
+
 ```ruby
 require 'data_mapper'
 #DataMapper.setup(:default, "sqlite3::memory:")
@@ -26,6 +27,6 @@ end
 
 ## How to run console
 
-```
+```ruby
   pry -r my_app.rb
 ```
