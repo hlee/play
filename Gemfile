@@ -5,7 +5,6 @@ gem 'sinatra', :github => "sinatra/sinatra"
 # view related
 gem 'haml'                    # for instance, if you use haml
 gem 'slim'
-
 gem 'shotgun'
 
 # database model related
@@ -21,6 +20,5 @@ group :development, :test do
   gem 'racksh'
   gem 'debugger'
   gem 'pry'
-  gem 'pry-nav'
   gem 'pry-debugger'
 end

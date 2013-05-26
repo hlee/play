@@ -1,2 +1,6 @@
 require './my_app'
-run MyApp
+run Rack::URLMap.new({
+  '/' => MyApp,
+  '/basic' => BasicProtected,
+  '/digest' => DigestProtected
+})
