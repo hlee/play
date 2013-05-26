@@ -32,6 +32,7 @@ end
 ## How to run console
 
 ```ruby
+  rachsh
   pry -r my_app.rb
 ```
 
