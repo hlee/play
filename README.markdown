@@ -38,3 +38,14 @@ end
 ## notes
 
 So far, debugger works perfect with sinatra. step debug
+
+## basic and digest authenticate
+
+![digest_authenticate](https://f.cloud.github.com/assets/83296/564705/86b1f108-c597-11e2-8cdd-59ac2bd75084.png)
+
+run rackup
+
+visit http://localhost:9393/basic or http://localhost:9393/digest
+
+need to clear cache if you just signed in
+
