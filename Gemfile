@@ -22,3 +22,8 @@ group :development, :test do
   gem 'pry'
   gem 'pry-debugger'
 end
+
+group :test do
+  gem 'rspec', '~> 2.7'
+  gem 'rack-test', '~> 0.6', require: 'rack/test'
+end
