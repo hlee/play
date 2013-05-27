@@ -6,6 +6,7 @@ gem 'sinatra', :github => "sinatra/sinatra"
 gem 'haml'                    # for instance, if you use haml
 gem 'slim'
 gem 'shotgun'
+gem 'foreman'
 
 # database model related
 gem 'mysql2'
