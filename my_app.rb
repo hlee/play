@@ -7,7 +7,10 @@ require 'active_record'
 require 'slim'
 require 'pry'
 require 'ap'
+#require 'bundler/setup'
 #env = ENV["RACK_ENV"]
+#Bundler.require(:default)
+require 'resque'
 
 DataMapper.setup(:default, 'mysql://root:password@localhost/lazer')
 class Student
@@ -52,6 +55,18 @@ ActiveRecord::Base.establish_connection(
 class Article < ActiveRecord::Base
 end
 
+Article.establish_connection(
+  adapter: 'sqlite3',
+  database: 'sin.sqlite'
+)
+
+module CreateArticle
+  @queue = :art
+  def self.perform(name)
+    Article.create(name: name)
+  end
+end
+
 class Post < ActiveRecord::Base
 end
 
@@ -84,10 +99,6 @@ class MyApp < Sinatra::Base
   get '/' do
     #debugger
     #binding.pry
-    Article.establish_connection(
-      adapter: 'sqlite3',
-      database: 'sin.sqlite'
-    )
     @articles = Article.all
     @posts = Post.all
     @students = Student.all
@@ -113,6 +124,11 @@ class MyApp < Sinatra::Base
   #get '/feed', provides: ['rss', 'xml'] do
   get '/feed.rss' do
     builder { |xml| xml.em 'hi' }
+  end
+
+  get '/article/:title' do
+    Resque.enqueue(CreateArticle, params[:title])
+    "Add #{params['title']} artile"
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
