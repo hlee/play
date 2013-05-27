@@ -7,6 +7,8 @@ gem 'haml'                    # for instance, if you use haml
 gem 'slim'
 gem 'shotgun'
 gem 'foreman'
+gem 'resque'
+gem 'rake'
 
 # database model related
 gem 'mysql2'
