@@ -79,3 +79,24 @@ visit http://localhost:9393/basic or http://localhost:9393/digest
 
 need to clear cache if you just signed in
 
+## Foreman & Resque
+
+resuqe just need perform(define and enqueue trigger) and rake file(for heroku and start)
+
+foreman just need Procfile to organize
+<br/>
+notes:
+
+if you have zombie workers, the foreman and resque will not work. You's better launch your consoleand terminate those zombies, as below:
+
+```ruby
+Resque.workers.each { |w| w.unregister_worker}
+#or
+Resque.workers.each { |w| w.prune_dead_workers}
+#or
+Resque.workers.each { |w| w.done_working}
+Resque.redis.save
+#or
+queue_name = 'process_numbers'
+Resque.redis.del "queue:#{queue_name}"
+```
