@@ -5,7 +5,7 @@ require 'resque/server'
 
 run Rack::URLMap.new({
   '/' => MyApp,
-  '/basic'  => BasicProtected,
-  '/digest' => DigestProtected,
+  '/basic'  => AuthProtect::BasicProtected,
+  '/digest' => AuthProtect::DigestProtected,
   '/resque' => Resque::Server.new
 })
