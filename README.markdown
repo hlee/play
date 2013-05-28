@@ -85,6 +85,20 @@ resuqe just need perform(define and enqueue trigger) and rake file(for heroku an
 
 foreman just need Procfile to organize
 <br/>
+
+```ruby
+#will start the web, resque web, and the worker 
+foreman start
+```
+
+resque-web<br/>
+http://localhost:5000/resque
+<br/>
+add article<br/>
+http://localhost:5000/article/aritle_name
+<br/>
+
+
 notes:
 
 if you have zombie workers, the foreman and resque will not work. You's better launch your consoleand terminate those zombies, as below:
